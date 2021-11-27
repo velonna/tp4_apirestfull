@@ -1,32 +1,26 @@
 [
   {
-    "id": 1,
-    "nombre": "Producto 1",
-    "precio": 100,
-    "foto": "unaurl1"
+    "id": 3,
+    "nombre": "Producto 3",
+    "precio": 3,
+    "foto": "3333"
+  },
+  {
+    "id": 4,
+    "nombre": "Producto 4",
+    "precio": 4,
+    "foto": "44444"
+  },
+  {
+    "id": 5,
+    "nombre": "Producto 5",
+    "precio": 5,
+    "foto": "5555"
   },
   {
     "id": 2,
-    "nombre": "Producto 2",
-    "precio": 200,
-    "foto": "unaurl2"
-  },
-  {
-    "id": 3,
-    "nombre": "Producto 4",
-    "precio": 10,
-    "foto": "unaurl4"
-  },
-  {
-    "id": 11,
-    "nombre": "10",
-    "precio": "10",
-    "foto": "100"
-  },
-  {
-    "id": 12,
-    "nombre": "8",
-    "precio": "8",
-    "foto": "888"
+    "nombre": "Proddfgdfgdg",
+    "precio": 422,
+    "foto": "5fdgdfg"
   }
 ]

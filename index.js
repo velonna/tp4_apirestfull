@@ -22,14 +22,13 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 router.post("/",(req,res,next) => {
-    //console.log(req.body.producto);
-    console.log(req.body.producto.precio);
+
     contenedor.save(req.body.producto).then(data => { 
         res.json(data);
         }).catch(error => {
             res.send(error);
             });
-            });
+        });
         
 router_id.get("/:id", (req,res,next) => {
     let id = req.params.id;    
@@ -54,22 +53,22 @@ router.delete("/:id", (req,res,next) => {
     });
 });
 
-router_id.put("/:id",(req,res,next) => {
-    let id = req.params.id;
-    let producto = req.body.producto;
-    contenedor.update(producto).then(data => {
-        res.send(data);
-    }).catch(error => {
-        res.send(error);
-    });
+router_id.put("/",(req,res,next) => {
+    
+     let producto = req.body;
+     contenedor.update(producto).then(data => {
+
+         res.json(data);
+     }).catch(error => {
+         res.send(error);
+     });
 });
 
 app.use("/api/productos", router);
 app.use("/api/productos", router_id);
 app.use("/api",express.static(path.join(__dirname, 'public','html')));
-app.use("/api",express.static(path.join(__dirname, 'public','edit.html')));
-app.get("/", (req,res,next) => {
-    
+//app.use("/",express.static(path.join(__dirname, 'public','html')));
+app.get("/", (req,res,next) => {    
     res.send("<h1>Bienvenido a la tienda de productos</h1>");
     });
 

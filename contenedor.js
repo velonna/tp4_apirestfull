@@ -22,20 +22,26 @@ class Contenedor {
         }
     }
     async update(producto){//modificar y devolver el id del producto
+        let existe=0;
         try{
             let resp = [];
             let data = await this.getAll();
             for(const key in data){
                 if(data[key].id == producto.id){
-                    data.splice(key, 1);
+                    existe = 1;
+                     resp = await this.deleteById(producto.id);
                 }
                 //console.log(data);
             }
-            data.push(producto);
-            let content = JSON.stringify(data, null,2);
+            if(existe == 1){
+            resp.push(producto);
+            let content = JSON.stringify(resp, null,2);
             await fs.promises.writeFile(this.url, content);
 
-            return newId;
+            return producto.id;
+        }else{
+            return "el producto no existe";
+        }
            // await fs.writeFileSync(this.url, JSON.stringify(data));
         }catch(error){
             console.log(error);
